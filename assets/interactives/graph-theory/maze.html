@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Depth-First Search Maze</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        overflow: hidden;
+      }
+      /* Style for the maze container */
+      .maze-container {
+        position: relative;
+      }
+
+      /* Style for the canvas */
+      #mazeCanvas {
+        border: 1px solid #333;
+        margin: 0 auto;
+      }
+
+      /* Style for the button container */
+      .button-container {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
+
+      /* Style for the buttons */
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      /* Hover effect for buttons */
+      button:hover {
+        background-color: #45a049;
+      }
+
+      /* Active (click) effect for buttons */
+      button:active {
+        background-color: #36713a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="maze-container">
+      <canvas id="mazeCanvas"></canvas>
+    </div>
+    <div class="button-container">
+      <button id="showSolutionButton">Show Solution</button>
+      <button id="resetButton">Reset Maze</button>
+      <button id="regenButton">Regenerate Maze</button>
+    </div>
+    <script src="maze.js"></script>
+  </body>
+</html>

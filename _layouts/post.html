@@ -53,6 +53,19 @@ layout: compress
           <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
           {% if page.date %}
           <div class="post-meta">
+            <span>
+              {% capture words %}
+                {{ page.content | number_of_words | minus: 250 }}
+              {% endcapture %}
+              {% unless words contains "-" %}
+                {{ words | plus: 250 | append: " words" }}
+              {% endunless %}
+              &nbsp;
+              {% unless words contains "-" %}
+                {{ words | plus: 250 | divided_by: 180 | append: " minute read" }}
+              {% endunless %}
+              &nbsp;
+            </span>
             <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
               {{ page.date | date: "%b %d, %Y" }}
             </time>
