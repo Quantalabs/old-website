@@ -9,7 +9,7 @@ tag:
   - math
   - cs
   - algorithms
-image: ./repo.png
+image: /Intro-to-Graph-Theory/repo.png
 ---
 
 > Imagine yourself within the picturesque setting of Königsberg, a city adorned with a network of bridges and islands. During the 18th century, this Prussian city, now known as Kaliningrad, faced a conundrum that perplexed its inhabitants and ignited the curiosity of mathematicians for generations to come. The challenge was deceptively simple yet tantalizingly complex: could a path be devised to traverse all seven bridges exactly once and return to the starting point?
@@ -139,7 +139,7 @@ A surprising application of DFS is maze generation, like below.[^5] We simply ma
   <iframe src="/assets/interactives/graph-theory/maze.html" style="border: none; width: 100%; height: 500px;"></iframe>
 </div>
 
-Of course, if we can use DFS to generate mazes, we can use it to solve them too! DFS is a great tool to solve mazes, but it doesn't always find the shortest path. Other algorithms like flood fill or BFS might be better suited. The interactive above generates the maze with DFS and solves it with BFS.
+Of course, if we can use DFS to generate mazes, we can use it to solve them too! DFS is a great tool to solve mazes, but it doesn't always find the shortest path. Other algorithms like flood  fill or BFS might be better suited. The interactive above generates the maze with DFS and solves it with BFS.
 
 # Notes, References, and Comments
 
