@@ -1,8 +1,8 @@
 ---
 layout: post
 title: An Introduction to Graph Theory
-date: 2023-06-23 01:00 -0700
-modified: 2023-06-23 01:00 -0700
+date: 2023-07-24 12:00 -0700
+modified: 2023-07-24 15:07 -0700
 description: An introduction to the fundamentals of graph theory.
 tag:
   - graph-theory
@@ -139,7 +139,19 @@ A surprising application of DFS is maze generation, like below.[^5] We simply ma
   <iframe src="/assets/interactives/graph-theory/maze.html" style="border: none; width: 100%; height: 500px;"></iframe>
 </div>
 
-Of course, if we can use DFS to generate mazes, we can use it to solve them too! DFS is a great tool to solve mazes, but it doesn't always find the shortest path. Other algorithms like flood  fill or BFS might be better suited. The interactive above generates the maze with DFS and solves it with BFS.
+Of course, if we can use DFS to generate mazes, we can use it to solve them too! DFS is a great tool to solve mazes, but it doesn't always find the shortest path. Other algorithms like flood fill or BFS might be better suited. The interactive above generates the maze with DFS and solves it with BFS. If your interested in this, check out the Micromouse competition.
+
+<p style="max-width: 100%;" align='center'>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZMQbHMgK2rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</p>
+
+Another application is in electrical engineering, when designing circuit connections. Linguistics uses graph theory to parse language trees and grammar analysis. Social networks can be modeled with graph theory. You can represent the molecular structure of a molecule with graph theory. 
+
+Obviously there are many more applications, and I encourage you to try and apply graph theory in another field you might be interested in.
+
+# Part 6: Conclusion
+
+Graph theory is a very large subject. I've only touched the surface of it, and I encourage you to continue to learn about it. To start, I recommend the book *Introduction to Graph Theory*, by Richard J. Trudeau. Thanks for reading!
 
 # Notes, References, and Comments
 
