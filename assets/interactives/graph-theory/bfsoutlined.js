@@ -70,3 +70,27 @@
     name: "dagre",
   },
 });
+
+// Highlight the BFS path, pausing 1000 ms after each step
+let path = [0, 1, 2, 3, 4, 5];
+let highlighted = [];
+
+let highlight = () => {
+  if (highlighted.length === 6) {
+    highlighted = [];
+    path = [0, 1, 2, 3, 4, 5];
+
+    for (let i = 0; i < path.length; i++) {
+      cy.$("#" + path[i]).css("background-color", "#FF5277");
+    }
+  }
+
+  highlighted.push(path.shift());
+
+  // Style all nodes in highlighted to have bg of red
+  for (let i = 0; i < highlighted.length; i++) {
+    cy.$("#" + highlighted[i]).css("background-color", "green");
+  }
+};
+
+let highlightInterval = setInterval(highlight, 1000);

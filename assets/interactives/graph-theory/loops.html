@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BFS Demo</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        margin: auto;
+      }
+
+      #cy {
+        width: 43vw;
+        height: 90vh;
+      }
+
+      #cy2 {
+        width: 43vw;
+        height: 90vh;
+      }
+
+      .column {
+        float: left;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.25.0/cytoscape.min.js"
+      integrity="sha512-QWYhhlZXfhMzyiML+xSFHYINwLvLsVd2Ex6QKA4JQzulKAsXiHoNXN1gCgB7GUaVL8xGI9L6XXyqPJVLASVP7g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="row">
+      <div id="cy" class="column"></div>
+      <div id="cy2" class="column"></div>
+    </div>
+  </body>
+  <script src="./loops.js"></script>
+</html>

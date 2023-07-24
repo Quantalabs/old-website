@@ -5,6 +5,8 @@ const MAZE_ROWS = 20;
 const MAZE_COLUMNS = 30;
 const MAZE_WIDTH = MAZE_COLUMNS * CELL_SIZE;
 const MAZE_HEIGHT = MAZE_ROWS * CELL_SIZE;
+let showSol = false;
+
 
 // Set the canvas size based on the maze dimensions
 canvas.width = MAZE_WIDTH;
@@ -107,6 +109,10 @@ function regenMaze() {
 
 // Function to draw the maze
 function drawMaze() {
+  if (showSol) {
+    findSolutionPath();
+  }
+
   ctx.clearRect(0, 0, MAZE_WIDTH, MAZE_HEIGHT);
   for (let x = 0; x < MAZE_ROWS; x++) {
     for (let y = 0; y < MAZE_COLUMNS; y++) {
@@ -135,13 +141,14 @@ drawMaze();
 // Event listener for the "Show Solution" button
 const showSolutionButton = document.getElementById("showSolutionButton");
 showSolutionButton.addEventListener("click", () => {
-  findSolutionPath();
+  showSol = true;
   drawMaze();
 });
 
 // Event listener for the "Reset" button
 const resetButton = document.getElementById("resetButton");
 resetButton.addEventListener("click", () => {
+  showSol = false;
   resetMaze();
   drawMaze(); // Draw the new maze after resetting
 });
