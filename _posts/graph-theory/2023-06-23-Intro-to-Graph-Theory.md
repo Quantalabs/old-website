@@ -80,7 +80,7 @@ There are, of course, [more terms and definitions](https://en.wikipedia.org/wiki
 
 # Part 3: Graph Traversal
 
-With the basics down, we can now go over graph traversal. As the name implies, graph traversal algorithmns allow us to visit each node algorithmically.
+With the basics down, we can now go over graph traversal. As the name implies, graph traversal algorithms allow us to visit each node algorithmically.
 
 ## Depth First Search
 
@@ -90,13 +90,13 @@ Depth first search (DFS) is a fairly common traversal algorithm. Let's take a gr
   <iframe src="/assets/interactives/graph-theory/dfsinit.html" style="border: none; width: 100%; height: 500px;"></iframe>
 </div>
 
-Start with node 0, and from node 0, let's go to node 1, the only option. From here, there are 2 options. It's important to note that there are usually multiple valid DFS orders, so it does not matter which path we take here. Let's pick node 2, since its the smaller value of the 2. Then we go to 3. From 3, we go to 5, and 5 to 6. Oh no! We've come to a dead end- and we haven't even reached all the nodes yet! Don't fret, we simply go back to 5, and from 5, we go to 4. All the nodes connected to 4 have been visited, so we keep going back in our chain: from 4 to 5 to 3 to 2 to 1 to 0. We've come back where we've started, and we've visited all the nodes!
+Start with node 0, and from node 0, let's go to node 1, the only option. From here, there are 2 options. It's important to note that there are usually multiple valid DFS orders, so it does not matter which path we take here. Let's pick node 2, since it's the smaller value of the 2. Then we go to 3. From 3, we go to 5, and 5 to 6. Oh no! We've come to a dead end- and we haven't even reached all the nodes yet! Don't fret, we simply go back to 5, and from 5, we go to 4. All the nodes connected to 4 have been visited, so we keep going back in our chain: from 4 to 5 to 3 to 2 to 1 to 0. We've come back where we've started, and we've visited all the nodes!
 
 <div style="max-width: 100%;">
   <iframe src="/assets/interactives/graph-theory/dfsoutlined.html" style="border: none; width: 100%; height: 500px;"></iframe>
 </div>
 
-As you can see, DFS takes all the neighbors of it's current node, and visits them one by one, performing DFS each time.
+As you can see, DFS takes all the neighbors of its current node, and visits them one by one, performing DFS each time.
 
 If we wanted to represent the DFS order we performed earlier, we'd have multiple options. A preorder would list them in the order they are visited, like $$[0,1,2,3,5,6,4]$$, while a postorder would list when they were last visted by the algorithm (the starting node will always end the postorder), and look something like $$[6,4,5,3,2,1,0]$$.
 
@@ -114,9 +114,9 @@ In the tree above, if we wanted to use BFS, we would start at the top. From node
   <iframe src="/assets/interactives/graph-theory/bfsoutlined.html" style="border: none; width: 100%; height: 500px;"></iframe>
 </div>
 
-We can define BFS by using a queue of nodes to visit. We first add the starting node to the queue, visit it, and then add all its neighbors to the beggining of the queue. We then pop off the last node in the queue, and repeat the process. This ensures that we complete one level of the tree at a time.
+We can define BFS by using a queue of nodes to visit. Let's first add the starting node to the queue, visit it, and then add all its neighbors to the beginning of the queue. Then, we'll pop off the last node in the queue, and repeat the process. This ensures that we complete one level of the tree at a time.
 
-BFS benefits from its repetive process of constantly going all the way back up the tree because in situations where a tree could be of infinite length, BFS will always find the solution node. DFS on the other hand has a very small chance of finding it, and most likely will end up going down the tree for infinity, never reaching a solution.
+BFS benefits from its repetitive process of constantly going all the way back up the tree because in situations where a tree could be of infinite length, BFS will always find the solution node. DFS on the other hand has a very small chance of finding it, and most likely will end up going down the tree for infinity, never reaching a solution.
 
 We can represent a BFS order by listing the nodes in the order we visit them. For the traversal we did earlier, it would be $$[0,1,2,3,4,5]$$.
 
@@ -128,22 +128,22 @@ Finally, the part you've been waiting for. First let's create a graph from the s
   <iframe src="/assets/interactives/graph-theory/bridge.html" style="border: none; width: 100%; height: 500px;"></iframe>
 </div>
 
-For a eulerian path to exist, a path that uses each edge only once, is possible only if there are 2 or 0 edges of odd degree. Why? Every time you enter a node via an edge, you leave via a different edge. Which means only the start an end nodes can have an odd degree, and if we end at the start node, then no nodes can have an odd degree. Knowing this, it means that a eulerian path does not exist for the bridge problem. All of our nodes have odd degree. Node 0 has a degree of 5, and the rest have a degree of 3.
+For an Eulerian path to exist, a path that uses each edge only once, is possible only if there are 2 or 0 nodes of odd degree. Why? Every time you enter a node via an edge, you leave via a different edge. Which means only the start and end nodes can have an odd degree, and if we end at the start node, then no nodes can have an odd degree. Knowing this, it means that an Eulerian path does not exist for the bridge problem. All of our nodes have odd degree. Node 0 has a degree of 5, and the rest have a degree of 3.
 # Part 5: Applications
 
-Although some might find it dissapointing that there's no solution, the problem still gave us a new field of mathematics, and one that is applied in a large number of areas.
+Although some might find it disappointing that there's no solution, the problem still gave us a new field of mathematics, and one that is applied in numerous areas.
 
-A suprising application of DFS is maze generation, like below.[^5] We simply make a grid a graph, pick a point on the graph, and start running DFS from that point.
+A surprising application of DFS is maze generation, like below.[^5] We simply make a grid a graph, pick a point on the graph, and start running DFS from that point.
 
 <div style="max-width: 100%;">
   <iframe src="/assets/interactives/graph-theory/maze.html" style="border: none; width: 100%; height: 500px;"></iframe>
 </div>
 
-Of course, if we can use DFS to generate mazes, we can use it to solve them too! DFS is a great tool to solve mazes, but it doesn't always find the shortest path. Other algorithms like floodfill or BFS might be better suited. The interactive above generates the maze with DFS and solves it with BFS.
+Of course, if we can use DFS to generate mazes, we can use it to solve them too! DFS is a great tool to solve mazes, but it doesn't always find the shortest path. Other algorithms like flood fill or BFS might be better suited. The interactive above generates the maze with DFS and solves it with BFS.
 
 # Notes, References, and Comments
 
-[^1]: For those interested, [here](https://archive.org/details/commentariiacade08impe/page/128/mode/2up) is Euler's original text. For those not fluent in latin, [here's a translated version](https://www.cantab.net/users/michael.behrend/repubs/maze_maths/pages/euler_en.html).
+[^1]: For those interested, [here](https://archive.org/details/commentariiacade08impe/page/128/mode/2up) is Euler's original text. For those not fluent in Latin, [here's a translated version](https://www.cantab.net/users/michael.behrend/repubs/maze_maths/pages/euler_en.html).
 [^2]: Euler's paper, entitled "Solutio problematis ad geometriam situs pertinentis" (see [^1]), is also considered one of the earliest papers in topology, not just graph theory.
 [^3]: This specific type of graph may also be known as an undirected simple graph.
 [^4]: Similar to undirected graphs, this graph may also be known as a directed simple graph.
