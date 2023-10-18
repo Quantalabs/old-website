@@ -22,7 +22,7 @@ author:
 url: "https://quantalabs.github.io" #
 baseurl: /
 permalink: /:title/
-google_analytics: # leave it blank if not wish
+google_analytics: G-W3HYC5KGHY
 
 # Collection setting
 collections:
