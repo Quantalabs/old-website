@@ -20,7 +20,7 @@ author:
 
 # URL settings
 url: "https://quantalabs.github.io" #
-baseurl: /
+baseurl: /old-website/
 permalink: /:title/
 google_analytics: G-W3HYC5KGHY
 
